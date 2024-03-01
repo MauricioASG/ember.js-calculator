@@ -1,0 +1,36 @@
+{{!-- Mauricio Alejandro Serrano García
+Materia: Aplicaciones web modernas
+N.C: 20460545
+fecha: 29 de febrero del 2024 --}}
+
+
+<div>
+  <h2>Ember.js calculator</h2> 
+  <h3>by: Mauricio Alejandro Serrano García</h3>
+
+  {{!-- Campo de entrada para el primer operando con tipo número y enlace a this.firstOperand --}}
+  <label for="firstOperand">Primer Operando:</label>
+  {{input type="number" value=this.firstOperand id="firstOperand"}}
+
+
+  {{!-- Campo de entrada para el segundo operando con tipo número y enlace a this.secondOperand --}}
+  <label for="secondOperand">Segundo Operando:</label>
+  {{input type="number" value=this.secondOperand id="secondOperand"}}
+
+  {{!-- Botón para realizar la suma, vinculado al método this.performOperation 
+  con el argumento "add" y tiene la clase "operator" --}}
+  <button {{action this.performOperation "add"}} class="operator">Sumar</button>
+
+{{!-- Botón para realizar la operación de resta--}}
+  <button {{action this.performOperation "subtract"}} class="operator">Restar</button>
+  
+  {{!-- Botón para  multiplicación--}}
+  <button {{action this.performOperation "multiply"}} class="operator">Multiplicar</button>
+
+  {{!-- Botón para  división--}}
+  <button {{action this.performOperation "divide"}} class="operator">Dividir</button>
+
+  {{!-- Párrafo para el resultado de las operaciones --}}
+  <p>Resultado: {{this.result}}</p>
+
+</div>
